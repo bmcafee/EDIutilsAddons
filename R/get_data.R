@@ -1,11 +1,13 @@
 #' Fetch Data from EDI
 #'
-#' This is the description.
+#' Quickly download
 #'
 #' @param packageId A complete or partial package identifier, such as edi.200 or edi.200.12
-#' @param revision A description
-#' @param filenum A description
+#' @param revision Either "newest" as a string or a numeric with a specific revision number. This will be overwritten by a revision number included in packageId
+#' @param filenum The number of the entity within the EDI data package.
 #' @param env A string describing the repository environment. Can be: "production", "staging", or "development".
+#'
+#' @return A dataframe of the EDI dataset
 #'
 #' @export
 get_data <- function(packageId, revision = "newest", filenum = 1, env = "production") {
