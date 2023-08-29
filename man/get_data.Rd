@@ -9,12 +9,15 @@ get_data(packageId, revision = "newest", filenum = 1, env = "production")
 \arguments{
 \item{packageId}{A complete or partial package identifier, such as edi.200 or edi.200.12}
 
-\item{revision}{A description}
+\item{revision}{Either "newest" as a string or a numeric with a specific revision number. This will be overwritten by a revision number included in packageId}
 
-\item{filenum}{A description}
+\item{filenum}{The number of the entity within the EDI data package.}
 
 \item{env}{A string describing the repository environment. Can be: "production", "staging", or "development".}
 }
+\value{
+A dataframe of the EDI dataset
+}
 \description{
-This is the description.
+Quickly download
 }
