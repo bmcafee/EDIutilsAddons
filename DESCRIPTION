@@ -1,7 +1,7 @@
 Package: EDIutilsAddons
 Type: Package
 Title: Additional EDI Utilities
-Version: 0.1.2
+Version: 0.1.3
 Author: Bennett McAfee <bmcafee@wisc.edu>
 Maintainer: Bennett McAfee <bmcafee@wisc.edu>
 Description: Additional Functions for interacting with the Environmental Data Initiative repository
