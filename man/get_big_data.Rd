@@ -7,13 +7,13 @@
 get_big_data(packageId, revision = "newest", filenum = 1, env = "production")
 }
 \arguments{
-\item{packageId}{A complete or partial package identifier, such as edi.200 or edi.200.12. Revision numbers included in this ID will overwrite the revision argument}
+\item{packageId}{A string containing a complete or partial package identifier, such as edi.1318 (without a revision number) or edi.1318.4 (with a revision number). Revision numbers included in this ID will overwrite the revision argument.}
 
-\item{revision}{Either "newest" as a string or a numeric with a specific revision number. This will be overwritten by a revision number included in packageId}
+\item{revision}{Either "newest" as a string or a numeric with a specific revision number. This will be overwritten by a revision number included in packageId.}
 
 \item{filenum}{The number of the entity within the EDI data package.}
 
-\item{env}{A string describing the repository environment. Can be: "production", "staging", or "development". If you do not know what this means, keep the default value of "production"}
+\item{env}{A string describing the repository environment. Can be: "production", "staging", or "development". If you do not know what this means, keep the default value of "production".}
 }
 \value{
 A data frame of the data table uploaded to EDI
