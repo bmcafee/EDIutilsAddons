@@ -1,11 +1,11 @@
 Package: EDIutilsAddons
 Type: Package
 Title: Additional EDI Utilities
-Version: 0.1.3
+Version: 0.1.5
 Author: Bennett McAfee <bmcafee@wisc.edu>
 Maintainer: Bennett McAfee <bmcafee@wisc.edu>
 Description: Additional Functions for interacting with the Environmental Data Initiative repository
-Imports: EDIutils, stringr, readr
+Imports: EDIutils, stringr, readr, curl
 Suggests: tidyverse
 License: GPL (>= 3)
 Encoding: UTF-8

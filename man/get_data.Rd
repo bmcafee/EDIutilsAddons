@@ -4,7 +4,13 @@
 \alias{get_data}
 \title{Fetch Data from EDI}
 \usage{
-get_data(packageId, revision = "newest", filenum = 1, env = "production")
+get_data(
+  packageId,
+  revision = "newest",
+  filenum = 1,
+  env = "production",
+  show_col_types = TRUE
+)
 }
 \arguments{
 \item{packageId}{A string containing a complete or partial package identifier, such as edi.1318 (without a revision number) or edi.1318.4 (with a revision number). Revision numbers included in this ID will overwrite the revision argument.}
@@ -14,6 +20,8 @@ get_data(packageId, revision = "newest", filenum = 1, env = "production")
 \item{filenum}{The number of the entity within the EDI data package.}
 
 \item{env}{A string describing the repository environment. Can be: "production", "staging", or "development". If you do not know what this means, keep the default value of "production".}
+
+\item{show_col_types}{A Boolean stating whether or not to display the column information when loading the data. Defaults to TRUE.}
 }
 \value{
 A data frame of the data table uploaded to EDI
