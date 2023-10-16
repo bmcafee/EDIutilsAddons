@@ -12,6 +12,10 @@
 #' @export
 get_big_data <- function(packageId, revision = "newest", filenum = 1, env = "production") {
 
+  if (is.null(curl::nslookup("portal.edirepository.org", error = FALSE))){
+    stop("Error connecting to PASTA. Please check your internet connection and/or the status of the EDI servers.")
+  }
+
   ## Obtaining package ID with requested revision number
   if (stringr::str_count(packageId, "\\.") < 1 | stringr::str_count(packageId, "\\.") >= 3){
     stop("Invalid Package ID")
