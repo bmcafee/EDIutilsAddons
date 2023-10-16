@@ -6,13 +6,14 @@
 #' @param revision Either "newest" as a string or a numeric with a specific revision number. This will be overwritten by a revision number included in packageId.
 #' @param filenum The number of the entity within the EDI data package.
 #' @param env A string describing the repository environment. Can be: "production", "staging", or "development". If you do not know what this means, keep the default value of "production".
+#' @param show_col_types A Boolean stating whether or not to display the column information when loading the data. Defaults to TRUE.
 #'
 #' @return A data frame of the data table uploaded to EDI
 #'
 #' @export
-get_data <- function(packageId, revision = "newest", filenum = 1, env = "production") {
+get_data <- function(packageId, revision = "newest", filenum = 1, env = "production", show_col_types = TRUE) {
 
-  if (is.null(curl::nslookup("portal.edirepository.org", error = FALSE))){
+  if (is.null(curl::nslookup("pasta.lternet.edu", error = FALSE))){
     stop("Error connecting to PASTA. Please check your internet connection and/or the status of the EDI servers.")
   }
 
@@ -39,7 +40,7 @@ get_data <- function(packageId, revision = "newest", filenum = 1, env = "product
   ## Loading the data entity
   res <- EDIutils::read_data_entity_names(packageId = full_id, env = env)
   raw <- EDIutils::read_data_entity(packageId = full_id, entityId = res$entityId[filenum], env = env)
-  data <- readr::read_csv(file = raw)
+  data <- readr::read_csv(file = raw, show_col_types = show_col_types)
 
   return(data)
 }
